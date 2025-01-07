@@ -1,3 +1,7 @@
+// Load Enviroment Variabes
+require('dotenv').config();
+
+
 // Importing necessary modules
 const express = require('express');
 const userRoutes = require('./routes/userRoutes');
