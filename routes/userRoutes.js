@@ -1,19 +1,20 @@
 const express = require('express');
+const authenticate = require('../middleware/auth');  // JWT authentication middleware
+const User = require('../models/User');  // Import User model
+
 const router = express.Router();
 
-// Register user
-router.post('/register', (req, res) => {
-    const { username, email, password } = req.body;
-    // Simulate saving to the database
-    console.log('User registered:', { username, email });
-    res.status(201).send({ message: 'User registered successfully!' });
-});
-
-// Get all users
-router.get('/users', (req, res) => {
-    // Simulate fetching from the database
-    const users = [{ id: 1, username: 'JohnDoe' }];
-    res.status(200).send(users);
+// Get user profile (protected route)
+router.get('/profile', authenticate, async (req, res) => {
+  try {
+    const user = await User.findByPk(req.user.id);  // Access user ID from the decoded JWT
+    if (!user) {
+      return res.status(404).json({ message: 'User not found.' });
+    }
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching user data.' });
+  }
 });
 
 module.exports = router;
