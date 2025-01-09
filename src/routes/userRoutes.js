@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 // Import necessary modules
-const authenticate = require('../middlewares/authMiddleware');
-const User = require('../models/User');  // Assuming you're using Sequelize
+const authenticate = require('../../middlewares/authMiddleware');
+const User = require('../../models/User');  // Assuming you're using Sequelize
 
 // Get user profile (protected route)
 router.get('/profile', authenticate, async (req, res) => {
