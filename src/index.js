@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const db = require('../config/db'); // Adjust path as needed
-
+const sequelize = require('./config/db'); // Adjust path if necessary
 
 console.log('Starting server...');
 let userRoutes;
@@ -33,3 +33,8 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+// Test the database connection
+sequelize.authenticate()
+  .then(() => console.log('Database connected!'))
+  .catch((err) => console.log('Error connecting to database:', err));
