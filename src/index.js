@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const app = express();
-const db = require('../config/db.js'); // Adjust path as needed
+const db = require('./config/db.js'); // Adjust path as needed
 const sequelize = require('./config/db'); // Adjust path if necessary
 
 console.log('Starting server...');

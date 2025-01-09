@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db'); // Ensure this points to your Sequelize instance
+const sequelize = require('../src/config/db'); // Ensure this points to your Sequelize instance
 
 const Profile = sequelize.define('Profile', {
     username: {
