@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User');  // Import User model
+const User = require('../../models/User');  // Import User model
 require('dotenv').config();  // Load environment variables from .env file
 
 const router = express.Router();

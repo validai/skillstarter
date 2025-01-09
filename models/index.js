@@ -92,7 +92,7 @@ app.use('/auth', authRoutes);  // Authentication routes (e.g., login, register)
 app.use('/api', userRoutes);   // User-related routes (e.g., profile)
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

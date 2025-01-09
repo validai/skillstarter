@@ -1,28 +1,19 @@
-// /models/user.js
+// src/models/User.js
 const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../config/db'); // Assuming db.js handles your DB connection
+const db = require('../config/db'); // Adjust based on your actual file structure
+const sequelize = require('../config/db'); // Ensure this points to your DB connection
 
 const User = sequelize.define('User', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  username: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
-  },
-  email: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
-  },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  timestamps: true, // Automatically adds createdAt and updatedAt fields
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    // Add other fields as needed
 });
 
 module.exports = User;
