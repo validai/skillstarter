@@ -1,0 +1,256 @@
+/* Import the Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  height: 1080px;
+  width: 1920px;
+}
+
+.box .homepage-desktop {
+  height: 1080px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 1920px;
+}
+
+/* Main container */
+.ComingSoon-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.ComingSoon-container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px; /* Adjust padding */
+    text-align: center;
+    width: 90%; /* Increase width */
+    max-width: 1200px; /* Set maximum width */
+    height: auto; /* Remove fixed height */
+    margin: 0 auto; /* Center the container */
+    top: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center content horizontally */
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ComingSoon-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid rgba(0, 0, 0, 0.37);
+  border-radius: 16px;
+  box-sizing: border-box;
+  animation: trace-border 2.5s linear infinite alternate; /* Reverse animation */
+  pointer-events: none;
+}
+
+@keyframes trace-border {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  75% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+/* Title and subtitle */
+.ComingSoon-title {
+  font-size: 60px; /* Increased font size */
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+  background: white;
+}
+
+.ComingSoon-subtitle {
+  font-size: 48px; /* Increased font size */
+  text-decoration: underline 3px #000000;
+  text-underline-offset: 5px;
+  font-weight: 500;
+  margin: 10px 0 20px;
+  background-color: white;
+}
+.ComingSoon-box {
+  margin: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background: white;
+}
+
+.ComingSoon-subtitle2{
+    background-color: white;
+    font-size: 40px;
+}
+
+.ComingSoon-description {
+  background: white;
+  font-size: 18px;
+  color: #313131;
+  margin: 20px 0;
+}
+
+/* Form styles */
+.form {
+  width: 100%;
+  padding: 0%;
+  border: none; /* Removed border */
+  box-shadow: none; /* Ensure no shadow */
+  max-width: 600px; /* Set maximum width */
+  margin: 0 auto; /* Center the form */
+}
+
+.form:hover,
+.form:focus,
+.form:active {
+  box-shadow: none; /* Remove hover, focus, and active effects */
+}
+
+.form-label {
+  font-size: 16px;
+  color: #000000;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ensure the input group takes full width */
+  box-shadow: none; /* Ensure no shadow */
+}
+
+.input-group:hover,
+.input-group:focus,
+.input-group:active {
+  box-shadow: none; /* Ensure no shadow on hover, focus, or active */
+}
+
+.form-control {
+  flex: 1;
+  padding: 15px; /* Increase padding */
+  font-size: 18px; /* Increase font size */
+  border: 1px solid #d1d1d1;
+  border-radius: 4px 0 0 4px;
+  height: 50px; /* Increase height */
+}
+
+.btn-primary {
+  padding: 0 20px; /* Adjust padding */
+  font-size: 18px; /* Adjust font size */
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background-color: #7a5cf0;
+  color: #ffffff;
+  cursor: pointer;
+  height: 50px; /* Match height with input */
+  width: auto; /* Adjust width to fit content */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center text */
+}
+
+.btn-primary:hover {
+  background-color: #5a3cb0; /* Darker purple */
+}
+
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #4a2c90 !important; /* Even darker purple for active state */
+}
+
+.input-group {
+    background-color: white;
+
+}
+
+div {
+    background-color: white;
+}
+
+/* Back button styles */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #ffffff; /* White background */
+  color: #7a5cf0;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: none; /* Remove box shadow */
+}
+
+.back-button:hover {
+  color: #5a3cb0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .ComingSoon-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .ComingSoon-title {
+    font-size: 36px;
+  }
+
+  .ComingSoon-subtitle {
+    font-size: 24px;
+  }
+
+  .btn-primary {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ComingSoon-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .ComingSoon-title {
+    font-size: 28px;
+  }
+
+  .ComingSoon-subtitle {
+    font-size: 20px;
+  }
+
+  .btn-primary {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

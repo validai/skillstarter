@@ -1,0 +1,227 @@
+/* Import the Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.box {
+  height: 1080px;
+  width: 1920px;
+}
+
+.box .homepage-desktop {
+  height: 1080px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 1920px;
+}
+
+/* Main container */
+.welcome-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #f3f4f6; /* Light grey background */
+}
+
+.welcome-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 40px; /* Adjust padding */
+  text-align: center;
+  width: 90%; /* Increase width */
+  max-width: 1200px; /* Increase max-width */
+  height: auto; /* Remove fixed height */
+  margin: 0;
+  top: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content horizontally */
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid rgba(0, 0, 0, 0.37);
+  border-radius: 16px;
+  box-sizing: border-box;
+  animation: trace-border 2.5s linear infinite alternate; /* Reverse animation */
+  pointer-events: none;
+}
+
+@keyframes trace-border {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  50% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  75% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+/* Title and subtitle */
+.welcome-title {
+  font-size: 60px; /* Increased font size */
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+}
+
+.welcome-box {
+  margin: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.welcome-subtitle {
+  font-size: 48px; /* Increased font size */
+  text-decoration: underline 3px #000000;
+  text-underline-offset: 5px;
+  font-weight: 500;
+  margin: 10px 0 20px;
+}
+
+.welcome-description {
+  background: white;
+  font-size: 18px;
+  color: #313131;
+  margin: 20px 0;
+}
+
+/* Tab container */
+.tab-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+/* Tab buttons */
+.tab-button {
+  background-color: #ffffff;
+  border: 2px solid #d1d1d1;
+  border-radius: 20px;
+  color: #000000;
+  cursor: pointer;
+  width: 300px; /* Increase width */
+  height: 70px; /* Increase height */
+  font-size: 24px; /* Increase font size */
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center text */
+}
+
+.tab-button.active {
+  background-color: #7a5cf0;
+  border-color: #7a5cf0;
+  color: #ffffff;
+}
+
+.tab-button:hover {
+  border-color: #7a5cf0;
+  transform: scale(1.05);
+}
+
+.tab-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px; /* Increase font size */
+  color: #000000;
+  margin: 0 10px;
+}
+
+/* Back button */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #ffffff; /* White background */
+  color: #7a5cf0;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: none; /* Remove box shadow */
+}
+
+.back-button:hover {
+  color: #5a3cb0;
+}
+
+svg {
+  background-color: white;
+  width: 100%;
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .welcome-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .welcome-title {
+    font-size: 36px;
+  }
+
+  .welcome-subtitle {
+    font-size: 24px;
+  }
+
+  .tab-button {
+    width: 120px;
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .welcome-title {
+    font-size: 28px;
+  }
+
+  .welcome-subtitle {
+    font-size: 20px;
+  }
+
+  .tab-button {
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+  }
+}

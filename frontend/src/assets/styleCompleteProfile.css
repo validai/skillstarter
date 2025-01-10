@@ -1,0 +1,265 @@
+/* Import the Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+  background-color: #EADDFF;
+  font-family: 'Inter';
+}
+
+.complete-profile-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.complete-profile-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  width: 90vw;
+  height: 80vh;
+  margin: 0 auto; /* Center the container */
+  max-width: 1200px; /* Set maximum width */
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.complete-profile-container:hover {
+  transform: translateY(-52%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.complete-profile-title {
+  background-color: #ffffff;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+  color: #555; /* Lighter black color */
+}
+
+.complete-profile-box {
+  background-color: #ffffff;
+  margin: 0;
+  margin-top: 60px;
+  border-radius: 16px;
+  max-width: 800px; /* Set maximum width */
+  margin: 0 auto; /* Center the box */
+}
+
+.complete-profile-subtitle {
+  background-color: #ffffff;
+  font-size: 60px;
+  text-decoration: underline 3px #000000;
+  text-underline-offset: 5px;
+  font-weight: 500;
+  margin: 10px 0 20px;
+  color: #333;
+}
+
+.form {
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 40px;
+  border: none; /* Removed border */
+  box-shadow: none; /* Ensure no shadow */
+  max-width: 600px; /* Set maximum width */
+  margin: 0 auto; /* Center the form */
+}
+
+.form:hover {
+  box-shadow: none; /* Remove hover effect */
+}
+
+.form-label {
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+  color: #333;
+}
+
+.mb-3 {
+  background: white;
+  border-radius: 16px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.skill-badge {
+  background-color: #7a5cf0;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.skill-badge button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-option {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.skill-option:hover {
+  background-color: #c0c0c0;
+}
+
+.btn-submit {
+  background-color: #7a5cf0;
+  border: none;
+  border-radius: 16px; /* Increase border radius */
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 20px auto; /* Center the button */
+  padding: 10px;
+  width: 80%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center text */
+}
+
+.btn-submit:hover {
+  background-color: #5a3cb0;
+  transform: scale(1.05);
+}
+
+.btn-submit:active {
+  background-color: #4a2a90;
+}
+
+.btn-submit:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.arrow-icon {
+  color: #ffffff; /* Ensure the arrow icon is white */
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1.5rem; /* Increase the font size */
+  background: none; /* Remove the background */
+  border: none; /* Remove the border */
+}
+
+.input-required {
+  border: 2px solid red;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #ffffff; /* White background */
+  color: #7a5cf0;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: none; /* Remove box shadow */
+}
+
+.back-button:hover {
+  color: #5a3cb0;
+}
+
+.dropdown-menu {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  position: absolute;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+select.form-control {
+  padding: 10px; /* Adjust padding */
+  line-height: 1.5; /* Adjust line height */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .complete-profile-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .complete-profile-title {
+    font-size: 36px;
+  }
+
+  .complete-profile-subtitle {
+    font-size: 24px;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .complete-profile-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .complete-profile-title {
+    font-size: 28px;
+  }
+
+  .complete-profile-subtitle {
+    font-size: 20px;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}

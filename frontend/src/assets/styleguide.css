@@ -1,0 +1,24 @@
+:root {
+  --brand-600: rgba(127, 86, 217, 1);
+  --drop-shadow-600: 0px 16px 32px -8px rgba(12, 12, 13, 0.4);
+  --l-drop-shadow: 3px 3px 9px 0px rgba(190, 190, 190, 0.13);
+  --m-3syslightoutline: rgba(121, 116, 126, 1);
+  --m-3white: rgba(255, 255, 255, 1);
+  --m3syslighton-primary-fixed: rgba(33, 0, 93, 1);
+  --m3syslighton-surface: rgba(29, 27, 32, 1);
+  --m3syslightprimary-container: rgba(234, 221, 255, 1);
+  --m3syslightsurface-container-high: rgba(236, 230, 240, 1);
+  --shadow-xs: 0px 1px 2px 0px rgba(10, 13, 18, 0.05);
+  --text-3-bold-font-family: "Poppins", Helvetica;
+  --text-3-bold-font-size: 18px;
+  --text-3-bold-font-style: normal;
+  --text-3-bold-font-weight: 700;
+  --text-3-bold-letter-spacing: 0px;
+  --text-3-bold-line-height: 140%;
+  --text-md-regular-font-family: "Inter", Helvetica;
+  --text-md-regular-font-size: 16px;
+  --text-md-regular-font-style: normal;
+  --text-md-regular-font-weight: 400;
+  --text-md-regular-letter-spacing: 0px;
+  --text-md-regular-line-height: 24px;
+}
