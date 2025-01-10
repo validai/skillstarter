@@ -15,7 +15,7 @@
     "sequelize-cli": "^6.6.2"
   },
   "scripts": {
-    "start": "node src/index.js",
+    "start": "vite preview --root frontend",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"

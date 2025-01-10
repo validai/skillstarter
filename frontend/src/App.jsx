@@ -7,8 +7,8 @@ import HomepageDesktop1 from './assets/HomepageDesktop1';
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/homepage" element={<HomepageDesktop1 />} />
+      <Route path="/" element={<HomepageDesktop1 />} />
+      <Route path="/home" element={<Home />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
