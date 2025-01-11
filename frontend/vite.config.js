@@ -7,6 +7,7 @@ export default defineConfig({
     port: 5173,
   },
   build: {
+    outDir: 'build',  // Ensure the output directory is set to 'build'
     rollupOptions: {
       input: './src/main.jsx'  // Ensure this path is correct
     }
