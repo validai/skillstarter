@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styleMyProfile.css"; // Use a separate CSS file for MyProfile
 
-export const MyProfile = () => {
+const MyProfile = () => {
   const location = useLocation();
   const { firstName, lastName, dob, residence, selectedSkills, profilePicture: initialProfilePicture, bio: initialBio } = location.state || {};
   const [profilePicture, setProfilePicture] = useState(initialProfilePicture);
@@ -178,3 +178,5 @@ export const MyProfile = () => {
     </main>
   );
 };
+
+export default MyProfile;

@@ -21,7 +21,7 @@ const CompleteProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/profile-setup', {
+    navigate('/ProfileSetup', {
       state: {
         firstName,
         lastName,

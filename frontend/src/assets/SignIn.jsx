@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styleSignIn.css";
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 
-export const SignIn = () => {
+const SignIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,7 +17,7 @@ export const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate('/my-profile', { state: { email, password } });
+    navigate('/MyProfile', { state: { email, password } });
   };
 
   return (
@@ -76,3 +76,5 @@ export const SignIn = () => {
     </main>
   );
 };
+
+export default SignIn;

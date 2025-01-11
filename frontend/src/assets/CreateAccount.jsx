@@ -4,7 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import "./styleCreateAccount.css"; // Use a separate CSS file for CreateAccount
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 
-export const CreateAccount = () => {
+const CreateAccount = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -69,3 +69,5 @@ export const CreateAccount = () => {
     </main>
   );
 };
+
+export default CreateAccount;

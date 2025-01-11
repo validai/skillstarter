@@ -9,7 +9,7 @@ const skillsList = [
   "HTML", "CSS", "SASS", "LESS", "Git", "Docker", "Kubernetes", "AWS", "Azure", "GCP"
 ];
 
-export const ProfileSetup = () => {
+const ProfileSetup = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { firstName, lastName, dob, residence } = location.state || {};
@@ -120,3 +120,5 @@ export const ProfileSetup = () => {
     </main>
   );
 };
+
+export default ProfileSetup;

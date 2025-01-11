@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import "./styleRolePicker.css";
 
-export const RolePicker = () => {
+const RolePicker = () => {
   const [activeTab, setActiveTab] = useState("employee");
   const navigate = useNavigate();
 
@@ -50,3 +50,5 @@ export const RolePicker = () => {
     </main>
   );
 };
+
+export default RolePicker;
