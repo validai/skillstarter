@@ -1,4 +1,7 @@
 {
+  "name": "skillstarter",
+  "version": "1.0.0",
+  "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^8.1.4",
     "bcrypt": "^5.1.1",
@@ -12,7 +15,33 @@
     "pg": "^8.13.1",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.5",
-    "sequelize-cli": "^6.6.2"
+    "sequelize-cli": "^6.6.2",
+    "axios": "^0.27.2",
+    "bootstrap": "^5.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^4.12.0",
+    "react-router-dom": "^6.28.1",
+    "serve": "^14.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "nodemon": "^3.1.9",
+    "vite": "^6.0.7",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@eslint/js": "^9.17.0",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-commonjs": "^21.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-replace": "^3.1.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0"
   },
   "scripts": {
     "start": "vite preview --root frontend",
@@ -20,18 +49,10 @@
     "build": "vite build",
     "serve": "vite preview"
   },
-  "name": "skillstarter",
-  "version": "1.0.0",
   "description": "\"A comprehensive app designed to help users prepare for job applications, ace interviews, and build essential career skills. Features include job tracking, interview practice tools, personalized skill assessments, and resources to boost career readiness. Ideal for job seekers, career changers, and professionals looking to enhance their skillsets.\"",
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.4",
-    "nodemon": "^3.1.9",
-    "vite": "^6.0.7"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/validai/skillstarter.git"
