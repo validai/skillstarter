@@ -2,7 +2,7 @@ services:
   - type: web
     name: skillstarter-frontend
     env: static
-    staticPublishPath: public
+    staticPublishPath: ./build  # Update this path to match your build output directory
     routes:
       - type: rewrite
         source: "/*"
