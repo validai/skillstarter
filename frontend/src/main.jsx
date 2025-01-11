@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import bootstrap CSS
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+  <Router>
     <App />
   </Router>
 );

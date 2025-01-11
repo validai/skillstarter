@@ -44,7 +44,7 @@
     "globals": "^15.14.0"
   },
   "scripts": {
-    "start": "vite preview --root frontend",
+    "start": "node index.js", // or your entry point file
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
