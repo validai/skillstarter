@@ -6,5 +6,8 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'build', // Output directory for the build inside the frontend folder
+    rollupOptions: {
+      external: ['react-icons/fa'], // Externalize react-icons/fa
+    },
   },
 });

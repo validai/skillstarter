@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaEnvelope, FaLock } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styleSignIn.css";
-import { FaEnvelope, FaLock } from 'react-icons/fa';
 
 const SignIn = () => {
   const navigate = useNavigate();
