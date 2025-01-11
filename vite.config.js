@@ -5,6 +5,6 @@ export default defineConfig({
   root: './frontend', // Set the root directory to 'frontend'
   plugins: [react()],
   build: {
-    outDir: 'dist', // Output directory for the build
+    outDir: 'build', // Output directory for the build inside the frontend folder
   },
 });
