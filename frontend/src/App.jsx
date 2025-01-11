@@ -18,7 +18,7 @@ function App() {
       <Route path="/CompleteProfile" element={<CompleteProfile />} />
       <Route path="/ComingSoon" element={<ComingSoon />} />
       <Route path="/ProfileSetup" element={<ProfileSetup />} />
-      <Route path="/MyProfile" element={<MyProfile />} />
+      <Route path="/my-profile" element={<MyProfile />} /> {/* Ensure this route is defined */}
       <Route path="/CreateAccount" element={<CreateAccount />} />
     </Routes>
   );
