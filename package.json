@@ -44,7 +44,7 @@
     "globals": "^15.14.0"
   },
   "scripts": {
-    "start": "serve -s frontend",
+    "start": "serve -s dist",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"

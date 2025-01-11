@@ -10,6 +10,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: 'src/main.jsx' // Ensure this path is correct
-    }
+    },
+    outDir: 'dist', // Ensure this matches the directory you want to serve
   }
 });
