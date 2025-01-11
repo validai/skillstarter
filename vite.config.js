@@ -5,12 +5,12 @@ export default defineConfig({
   plugins: [react()],
   server: {
     open: true,
-    port: 5173, // Added port configuration from the other file
+    port: 5173,
   },
   build: {
     rollupOptions: {
       input: 'src/main.jsx' // Ensure this path is correct
     },
-    outDir: 'dist', // Ensure this matches the directory you want to serve
+    outDir: 'dist',
   }
 });
