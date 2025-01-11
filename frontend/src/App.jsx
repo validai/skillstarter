@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import WelcomeScreen from "./assets/HomepageDesktop1";
 import SignIn from "./assets/SignIn";

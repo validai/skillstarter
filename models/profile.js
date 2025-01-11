@@ -1,3 +1,4 @@
+
 const { DataTypes } = require('sequelize');
 const sequelize = require('../src/config/db'); // Ensure this points to your Sequelize instance
 
