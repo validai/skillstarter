@@ -9,5 +9,8 @@ export default defineConfig({
   },
   build: {
     outDir: 'build', // Ensure the output directory is set correctly
+    rollupOptions: {
+      input: 'index.html', // Specify the entry point for the build process
+    },
   },
 });
