@@ -8,7 +8,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      input: '/path/to/your/entry/file.js' // Update this path to your actual entry file
+      input: 'src/main.jsx' // Ensure this path is correct
     }
   }
 });
