@@ -44,7 +44,7 @@
     "globals": "^15.14.0"
   },
   "scripts": {
-    "start": "serve -s dist -l 3000 --single",
+    "start": "serve -s dist --single",
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"

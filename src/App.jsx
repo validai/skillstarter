@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import WelcomeScreen from '../frontend/src/assets/HomepageDesktop1'; // Adjusted path
+import WelcomeScreen from './frontend/src/assets/HomepageDesktop1'; // Adjusted path
 import SignIn from './SignIn';
 import RolePicker from './RolePicker';
 
