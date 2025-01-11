@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import WelcomeScreen from './assets/HomepageDesktop1';
-import SignIn from './SignIn'; // Ensure this component exists
-import RolePicker from './RolePicker'; // Ensure this component exists
+import WelcomeScreen from '../frontend/src/assets/HomepageDesktop1'; // Adjusted path
+import SignIn from './SignIn';
+import RolePicker from './RolePicker';
 
 function App() {
   return (
