@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: skillstarter-frontend
+    env: static
+    staticPublishPath: public
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"
