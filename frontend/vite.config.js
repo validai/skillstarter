@@ -6,4 +6,9 @@ export default defineConfig({
   server: {
     port: 5173,
   },
+  build: {
+    rollupOptions: {
+      input: './src/main.jsx'  // Ensure this path is correct
+    }
+  }
 });

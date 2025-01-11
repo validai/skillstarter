@@ -2,7 +2,7 @@ frontend:
   phases:
     build:
       commands:
-        - npm run build
+        - npm run build  # Ensure this command outputs to the 'build' directory
   artifacts:
     baseDirectory: build
     files:
