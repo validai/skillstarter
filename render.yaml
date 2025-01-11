@@ -1,11 +1,9 @@
 services:
   - type: web
-    name: skillstarter-1
-    env: node
-    plan: free
-    buildCommand: npm install && npm run build
-    startCommand: npm start
-    envVars:
-      - key: NODE_ENV
-        value: production
-      # Add other environment variables here
+    name: skillstarter-frontend
+    env: static
+    staticPublishPath: public
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"
