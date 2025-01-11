@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: skillstarter-frontend
-    env: static
-    staticPublishPath: ./frontend/build  # Ensure this path matches your build output directory
-    routes:
-      - type: rewrite
-        source: "/*"
-        destination: "/index.html"
