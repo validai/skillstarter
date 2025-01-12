@@ -39,12 +39,13 @@
     max-width: 1200px; /* Set maximum width */
     height: auto; /* Remove fixed height */
     margin: 0 auto; /* Center the container */
-    top: 25vh;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; /* Center content horizontally */
-    position: relative;
+    position: absolute; /* Change to absolute positioning */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 

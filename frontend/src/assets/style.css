@@ -182,6 +182,10 @@ svg {
   width: 100%;
 }
 
+.text-limited-width {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {

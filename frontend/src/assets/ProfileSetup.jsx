@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { FaArrowLeft, FaPlus } from 'react-icons/fa';
+import { FaArrowLeft, FaPlus, FaArrowDown } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styleProfileSetup.css"; // Use a separate CSS file for ProfileSetup
 
@@ -68,6 +68,7 @@ const ProfileSetup = () => {
         <button className="back-button" onClick={() => navigate(-1)}>
           <FaArrowLeft />
         </button>
+        <FaArrowDown className="scroll-indicator" />
         <section className="profile-setup-box">
           <h1 className="profile-setup-title">Set Up Your Profile</h1>
           <form className="form" onSubmit={handleSubmit}>

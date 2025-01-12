@@ -116,13 +116,12 @@
 .form {
   background-color: #ffffff;
   border-radius: 6px;
-  border: #000000 1px solid;
   padding: 40px;
-  transition: box-shadow 0.3s ease;
+  box-shadow: none; /* Ensure no shadow */
 }
 
 .form:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: none; /* Remove hover effect */
 }
 
 .form-label {
@@ -229,6 +228,18 @@
   font-size: 1.5rem; /* Increase the font size */
   background: none; /* Remove the background */
   border: none; /* Remove the border */
+}
+
+.icon-background {
+  background-color: #7a5cf0; /* Purple background */
+  color: #ffffff; /* White icon color */
+  border-radius: 50%;
+  padding: 15px; /* Adjust padding to match input height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px; /* Match height with input */
+  width: 50px; /* Match width with input */
 }
 
 .back-button {

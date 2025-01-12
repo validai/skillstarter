@@ -26,7 +26,7 @@ const RolePicker = () => {
         <section className="role-picker-box">
           <h1 className="role-picker-title">Welcome to</h1>
           <h2 className="role-picker-subtitle">SkillStarter!</h2>
-          <p className="role-picker-description">
+          <p className="role-picker-description text-limited-width">
             SkillStarter is your go-to platform for enhancing your skills and advancing your career. Join us today and start your journey towards success!
           </p>
           <p className="role-picker-question">Are you a...</p>

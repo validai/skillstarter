@@ -22,7 +22,7 @@ const WelcomeScreen = () => {
         <section className="welcome-box">
           <h1 className="welcome-title">Welcome to</h1>
           <h2 className="welcome-subtitle">SkillStarter!</h2>
-          <p className="welcome-description">
+          <p className="welcome-description text-limited-width">
             SkillStarter is your go-to platform for enhancing your skills and advancing your career. Join us today and start your journey towards success!
           </p>
           <div className="tab-container">

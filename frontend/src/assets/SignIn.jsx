@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaEnvelope, FaLock } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styleSignIn.css";
+import axios from 'axios';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -14,9 +15,18 @@ const SignIn = () => {
     setIsFormValid(email.trim() !== '' && password.trim() !== '');
   }, [email, password]);
 
-  const handleSubmit = async (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    navigate('/MyProfile', { state: { email, password } });
+    try {
+      // Replace with your API endpoint
+      const response = await axios.post('/api/signin', { email, password });
+      const userProfile = response.data;
+      // Navigate to the user's profile page
+      navigate(`/profile/${userProfile.id}`);
+    } catch (error) {
+      console.error("Error signing in", error);
+      // Handle error (e.g., show error message)
+    }
   };
 
   return (
@@ -28,13 +38,11 @@ const SignIn = () => {
         <section className="welcome-box">
           <h1 className="welcome-title">Welcome to</h1>
           <h2 className="welcome-subtitle">SkillStarter!</h2>
-          <form className="form" onSubmit={handleSubmit}>
+          <form className="form" onSubmit={handleSignIn}>
             <div className="mb-3">
               <label htmlFor="formBasicEmail" className="form-label">Email address</label>
               <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text bg-transparent border-0"><FaEnvelope /></span>
-                </div>
+                <span className="input-group-text icon-background"><FaEnvelope /></span>
                 <input 
                   type="email" 
                   className="form-control" 
@@ -49,9 +57,7 @@ const SignIn = () => {
             <div className="mb-3">
               <label htmlFor="formBasicPassword" className="form-label">Password</label>
               <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text bg-transparent border-0"><FaLock /></span>
-                </div>
+                <span className="input-group-text icon-background"><FaLock /></span>
                 <input 
                   type="password" 
                   className="form-control" 

@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styleMyProfile.css"; // Use a separate CSS file for MyProfile
 
 const MyProfile = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { firstName, lastName, dob, residence, selectedSkills, profilePicture: initialProfilePicture, bio: initialBio } = location.state || {};
   const [profilePicture, setProfilePicture] = useState(initialProfilePicture);
   const [bio, setBio] = useState(initialBio);
@@ -36,6 +37,10 @@ const MyProfile = () => {
   };
 
   const handleSaveProject = () => {
+    if (!editingProject.name || !editingProject.description || !editingProject.image) {
+      alert("Please fill out all fields before saving the project.");
+      return;
+    }
     if (editingProject.index !== undefined) {
       const updatedProjects = projects.map((project, i) =>
         i === editingProject.index ? editingProject : project
@@ -66,8 +71,18 @@ const MyProfile = () => {
     setEditingBio(false);
   };
 
+  const handleLogout = () => {
+    navigate('/HomePageDesktop');
+  };
+
+  const handleMyFeed = () => {
+    navigate('/ComingSoon');
+  };
+
   return (
     <main className="my-profile-screen">
+      <button className="my-feed-button" onClick={handleMyFeed}>My Feed</button>
+      <button className="logout-button" onClick={handleLogout}>Logout</button>
       <div className="profile-projects-container">
         <section className="my-profile-container">
           <header className="my-profile-header">
@@ -85,13 +100,16 @@ const MyProfile = () => {
               <div className="bio-section">
                 <strong className="bio-title">Bio:</strong>
                 {editingBio ? (
-                  <div>
+                  <div className="bio-edit-container">
                     <textarea
                       value={bio}
                       onChange={(e) => setBio(e.target.value)}
                       className="bio-textarea"
                     />
-                    <button onClick={handleSaveBio}>Save</button>
+                    <div className="bio-edit-buttons">
+                      <button className="save-bio-button" onClick={handleSaveBio}>Save</button>
+                      <button className="cancel-bio-button" onClick={() => setEditingBio(false)}>Cancel</button>
+                    </div>
                   </div>
                 ) : (
                   <div className="bio-box">
@@ -114,6 +132,7 @@ const MyProfile = () => {
         <section className="projects-container">
           <header className="projects-header">
             <h2 className="projects-title">My Projects</h2>
+            <button className="add-project-button" onClick={handleAddProject}>+</button>
           </header>
           <section className="projects-content">
             <div className="projects-grid">
@@ -122,11 +141,10 @@ const MyProfile = () => {
                   <img src={project.image} alt={project.name} className="project-image" />
                   <h3>{project.name}</h3>
                   <p>{project.description.length > 100 ? `${project.description.substring(0, 100)}...` : project.description}</p>
-                  <button className="edit-project-button" onClick={(e) => { e.stopPropagation(); handleEditProject(index); }}>✎</button>
                   <button className="remove-project-button" onClick={(e) => { e.stopPropagation(); handleRemoveProject(index); }}>X</button>
+                  <button className="edit-project-button" onClick={(e) => { e.stopPropagation(); handleEditProject(index); }}>✎</button>
                 </div>
               ))}
-              <button className="add-project-button" onClick={handleAddProject}>+</button>
             </div>
           </section>
         </section>

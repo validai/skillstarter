@@ -51,6 +51,43 @@
   border-radius: 16px;
   max-width: 800px; /* Set maximum width */
   margin: 0 auto; /* Center the box */
+  max-height: 70vh; /* Ensure box does not exceed viewport height */
+  overflow-y: scroll; /* Always show vertical scrollbar */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #7a5cf0 #e0e0e0; /* Firefox */
+}
+
+.complete-profile-box::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.complete-profile-box::-webkit-scrollbar-track {
+  background: #e0e0e0; /* Track color */
+  border-radius: 16px; /* Rounded corners */
+}
+
+.complete-profile-box::-webkit-scrollbar-thumb {
+  background-color: #7a5cf0; /* Scrollbar color */
+  border-radius: 16px; /* Rounded corners */
+  border: 3px solid #e0e0e0; /* Padding around scrollbar */
+}
+
+.scroll-indicator {
+  position: absolute;
+  right: 10px; /* Move to the right side */
+  bottom: 10px; /* Move to the bottom */
+  font-size: 24px;
+  color: #7a5cf0;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .complete-profile-subtitle {
@@ -71,6 +108,8 @@
   box-shadow: none; /* Ensure no shadow */
   max-width: 600px; /* Set maximum width */
   margin: 0 auto; /* Center the form */
+  max-height: 70vh; /* Ensure form does not exceed viewport height */
+  overflow-y: auto; /* Add vertical scroll if content overflows */
 }
 
 .form:hover {
@@ -184,7 +223,7 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  background-color: #ffffff; /* White background */
+  background-color: transparent; /* Transparent background */
   color: #7a5cf0;
   border: none;
   border-radius: 50%;

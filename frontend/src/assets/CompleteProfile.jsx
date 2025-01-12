@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowDown } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styleCompleteProfile.css"; // Use a separate CSS file for CompleteProfile
 
@@ -18,17 +18,24 @@ const CompleteProfile = () => {
   const [lastName, setLastName] = useState('');
   const [dob, setDob] = useState('');
   const [residence, setResidence] = useState('');
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    setIsFormValid(firstName.trim() !== '' && lastName.trim() !== '' && dob.trim() !== '' && residence.trim() !== '');
+  }, [firstName, lastName, dob, residence]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/ProfileSetup', {
-      state: {
-        firstName,
-        lastName,
-        dob,
-        residence
-      }
-    });
+    if (isFormValid) {
+      navigate('/ProfileSetup', {
+        state: {
+          firstName,
+          lastName,
+          dob,
+          residence
+        }
+      });
+    }
   };
 
   return (
@@ -37,6 +44,7 @@ const CompleteProfile = () => {
         <button className="back-button" onClick={() => navigate(-1)}>
           <FaArrowLeft />
         </button>
+        <FaArrowDown className="scroll-indicator" />
         <section className="complete-profile-box">
           <h1 className="complete-profile-title">Complete Your Profile</h1>
           <h2 className="complete-profile-subtitle">SkillStarter!</h2>
@@ -64,7 +72,7 @@ const CompleteProfile = () => {
                 ))}
               </select>
             </div>
-            <button type="submit" className="btn-submit">
+            <button type="submit" className="btn-submit" disabled={!isFormValid}>
                 Next
             </button>
           </form>

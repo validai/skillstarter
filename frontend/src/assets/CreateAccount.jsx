@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa'; // Removed FaArrowDown
 import "./styleCreateAccount.css"; // Use a separate CSS file for CreateAccount
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 

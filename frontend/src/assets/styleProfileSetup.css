@@ -51,13 +51,49 @@
   border-radius: 16px;
   max-width: 800px; /* Set maximum width */
   margin: 0 auto; /* Center the box */
+  max-height: 70vh; /* Ensure box does not exceed viewport height */
+  overflow-y: scroll; /* Always show vertical scrollbar */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #7a5cf0 #e0e0e0; /* Firefox */
+}
+
+.profile-setup-box::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+.profile-setup-box::-webkit-scrollbar-track {
+  background: #e0e0e0; /* Track color */
+  border-radius: 16px; /* Rounded corners */
+}
+
+.profile-setup-box::-webkit-scrollbar-thumb {
+  background-color: #7a5cf0; /* Scrollbar color */
+  border-radius: 16px; /* Rounded corners */
+  border: 3px solid #e0e0e0; /* Padding around scrollbar */
+}
+
+.scroll-indicator {
+  position: absolute;
+  right: 10px; /* Move to the right side */
+  bottom: 10px; /* Move to the bottom */
+  font-size: 24px;
+  color: #7a5cf0;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .form {
   background-color: #ffffff;
   border-radius: 6px;
   padding: 40px;
-  border: none; /* Removed border */
   box-shadow: none; /* Ensure no shadow */
   max-width: 600px; /* Set maximum width */
   margin: 0 auto; /* Center the form */
@@ -155,6 +191,18 @@ svg {
   font-size: 1.5rem; /* Increase the font size */
   background: none; /* Remove the background */
   border: none; /* Remove the border */
+}
+
+.icon-background {
+  background-color: #7a5cf0; /* Purple background */
+  color: #ffffff; /* White icon color */
+  border-radius: 50%;
+  padding: 15px; /* Adjust padding to match input height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px; /* Match height with input */
+  width: 50px; /* Match width with input */
 }
 
 .back-button {
