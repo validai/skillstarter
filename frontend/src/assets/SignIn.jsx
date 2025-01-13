@@ -10,6 +10,7 @@ const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(''); // To handle errors
 
   useEffect(() => {
     setIsFormValid(email.trim() !== '' && password.trim() !== '');
@@ -18,17 +19,45 @@ const SignIn = () => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
-      // Replace with your API endpoint
-      const response = await axios.post('/api/signin', { email, password });
-      const userProfile = response.data;
-      // Navigate to the user's profile page
-      navigate(`/profile/${userProfile.id}`);
+      const response = await axios.post('https://skillstarter-7ztu.onrender.com/api/signin', { email, password });
+      
+      if (response.status === 200) {
+        const { token, user } = response.data;
+  
+ // Extracting specific user data fields
+ const {
+  firstName,
+  lastName,
+  dob,
+  residence,
+  profilePicture,
+  bio,
+  selectedSkills
+} = user;
+
+// Store token and specific user data in sessionStorage
+sessionStorage.setItem('token', token);
+sessionStorage.setItem('firstName', firstName);
+sessionStorage.setItem('lastName', lastName);
+sessionStorage.setItem('dob', dob);
+sessionStorage.setItem('residence', residence);
+sessionStorage.setItem('profilePicture', profilePicture);
+sessionStorage.setItem('bio', bio);
+sessionStorage.setItem('selectedSkills', JSON.stringify(selectedSkills)); // Store as JSON string
+
+        // Navigate to "my-profile"
+        navigate('./my-profile');
+      }
     } catch (error) {
       console.error("Error signing in", error);
-      // Handle error (e.g., show error message)
+      if (error.response && error.response.data) {
+        setErrorMessage(error.response.data.message || 'An error occurred while signing in.');
+      } else {
+        setErrorMessage('Something went wrong. Please try again.');
+      }
     }
   };
-
+  
   return (
     <main className="welcome-screen">
       <section className="welcome-container">
@@ -72,6 +101,11 @@ const SignIn = () => {
               <input type="checkbox" className="form-check-input" id="formBasicCheckbox" />
               <label className="form-check-label" htmlFor="formBasicCheckbox">Stay signed in?</label>
             </div>
+            {errorMessage && (
+              <div className="alert alert-danger" role="alert">
+                {errorMessage}
+              </div>
+            )}
             <button type="submit" className="btn-submit" disabled={!isFormValid}>
               Submit
             </button>

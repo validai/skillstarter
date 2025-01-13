@@ -16,6 +16,9 @@ const CreateAccount = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+        // Store the email and password in sessionStorage
+        sessionStorage.setItem('email', email);
+        sessionStorage.setItem('password', password);
     navigate("/CompleteProfile", { state: { email, password } });
   };
 

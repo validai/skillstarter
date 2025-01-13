@@ -4,11 +4,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styleMyProfile.css"; // Use a separate CSS file for MyProfile
 
 const MyProfile = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const { firstName, lastName, dob, residence, selectedSkills, profilePicture: initialProfilePicture, bio: initialBio } = location.state || {};
-  const [profilePicture, setProfilePicture] = useState(initialProfilePicture);
-  const [bio, setBio] = useState(initialBio);
+
+  // Checking if JWT token is present in sessionStorage
+  const token = sessionStorage.getItem('token');
+  if (!token) {
+    navigate('/signin'); // Redirect to the sign-in page if no token is found
+  }
+  else {
+    console.log ('token creation success');
+  }
+
+  // Read user data from sessionStorage
+  const firstName = sessionStorage.getItem('firstName');
+  const lastName = sessionStorage.getItem('lastName');
+  const dob = sessionStorage.getItem('dob');
+  const residence = sessionStorage.getItem('residence');
+  const profilePicture = sessionStorage.getItem('profilePicture');
+  const bio = sessionStorage.getItem('bio');
+  const selectedSkills = JSON.parse(sessionStorage.getItem('selectedSkills')) || [];
+
+  const [bioState, setBioState] = useState(bio);
   const [projects, setProjects] = useState([]);
   const [editingProject, setEditingProject] = useState(null);
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
