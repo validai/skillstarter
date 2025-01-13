@@ -52,9 +52,7 @@
   max-width: 800px; /* Set maximum width */
   margin: 0 auto; /* Center the box */
   max-height: 70vh; /* Ensure box does not exceed viewport height */
-  overflow-y: scroll; /* Always show vertical scrollbar */
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #7a5cf0 #e0e0e0; /* Firefox */
+
 }
 
 .complete-profile-box::-webkit-scrollbar {

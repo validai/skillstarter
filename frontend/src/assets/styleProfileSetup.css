@@ -52,24 +52,6 @@
   max-width: 800px; /* Set maximum width */
   margin: 0 auto; /* Center the box */
   max-height: 70vh; /* Ensure box does not exceed viewport height */
-  overflow-y: scroll; /* Always show vertical scrollbar */
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #7a5cf0 #e0e0e0; /* Firefox */
-}
-
-.profile-setup-box::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
-}
-
-.profile-setup-box::-webkit-scrollbar-track {
-  background: #e0e0e0; /* Track color */
-  border-radius: 16px; /* Rounded corners */
-}
-
-.profile-setup-box::-webkit-scrollbar-thumb {
-  background-color: #7a5cf0; /* Scrollbar color */
-  border-radius: 16px; /* Rounded corners */
-  border: 3px solid #e0e0e0; /* Padding around scrollbar */
 }
 
 .scroll-indicator {
