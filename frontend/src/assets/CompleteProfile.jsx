@@ -27,6 +27,11 @@ const CompleteProfile = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isFormValid) {
+            // Store the form data in sessionStorage
+            sessionStorage.setItem('firstName', firstName);
+            sessionStorage.setItem('lastName', lastName);
+            sessionStorage.setItem('dob', dob);
+            sessionStorage.setItem('residence', residence);
       navigate('/ProfileSetup', {
         state: {
           firstName,

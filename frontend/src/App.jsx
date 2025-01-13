@@ -18,6 +18,7 @@ function App() {
       <Route path="/ComingSoon" element={<ComingSoon />} />
       <Route path="/ProfileSetup" element={<ProfileSetup />} />
       <Route path="/my-profile" element={<MyProfile />} /> {/* Ensure this route is defined */}
+      <Route path="/SignIn/my-profile" element={<MyProfile />} />
       <Route path="/CreateAccount" element={<CreateAccount />} />
     </Routes>
   );

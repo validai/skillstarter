@@ -47,19 +47,73 @@ const ProfileSetup = () => {
     setSelectedSkills(selectedSkills.filter(s => s !== skill));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate('/my-profile', {
-      state: {
-        firstName,
-        lastName,
-        dob,
-        residence,
-        selectedSkills,
-        profilePicture,
-        bio
+    // Retrieve data from sessionStorage
+    const email = sessionStorage.getItem('email');
+    const password = sessionStorage.getItem('password');
+    const firstName = sessionStorage.getItem('firstName');
+    const lastName = sessionStorage.getItem('lastName');
+    const dob = sessionStorage.getItem('dob');
+    const residence = sessionStorage.getItem('residence');
+    
+    // Prepare the data to send to the backend
+    const userProfileData = {
+      email,
+      password,
+      firstName,
+      lastName,
+      dob,
+      residence,
+      bio,
+      skills: selectedSkills,
+      profilePicture,
+    };
+    
+    try {
+      const response = await fetch('https://skillstarter-7ztu.onrender.com:3000/api/addUserProfile', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userProfileData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Assuming your backend returns a JWT token upon successful profile creation
+        const { token } = data;
+
+        if (token) {
+          // Store the JWT token in sessionStorage or localStorage
+          sessionStorage.setItem('token', token);
+
+          console.log('Profile created successfully:', data.message);
+          sessionStorage.setItem('profilePicture', profilePicture);
+          sessionStorage.setItem('bio', bio);
+          sessionStorage.setItem('selectedSkills', selectedSkills); // Store as JSON string
+          navigate('/my-profile', {
+            state: {
+              firstName,
+              lastName,
+              dob,
+              residence,
+              selectedSkills,
+              profilePicture,
+              bio
+            }
+          });
+        } else {
+          alert('Failed to retrieve the JWT token');
+        }
+      } else {
+        const errorData = await response.json();
+        alert(errorData.error || 'An error occurred while saving the profile.');
       }
-    });
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to submit the profile data.');
+    }
   };
 
   return (
