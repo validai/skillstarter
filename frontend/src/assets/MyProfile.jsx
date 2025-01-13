@@ -22,7 +22,20 @@ const MyProfile = () => {
   const residence = sessionStorage.getItem('residence');
   const profilePicture = sessionStorage.getItem('profilePicture');
   const bio = sessionStorage.getItem('bio');
-  const selectedSkills = JSON.parse(sessionStorage.getItem('selectedSkills')) || [];
+  const storedSkills = sessionStorage.getItem('selectedSkills');
+
+let selectedSkills = [];
+if (storedSkills) {
+  try {
+    // Try parsing as JSON
+    selectedSkills = JSON.parse(storedSkills);
+  } catch (error) {
+    console.warn('selectedSkills is not valid JSON, using raw value:', storedSkills);
+    selectedSkills = storedSkills; // Use the raw value if parsing fails
+  }
+} else {
+  console.log('No selectedSkills found in sessionStorage, using empty array.');
+}
 
   const [bioState, setBioState] = useState(bio);
   const [projects, setProjects] = useState([]);

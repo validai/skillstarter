@@ -91,7 +91,7 @@ const ProfileSetup = () => {
           console.log('Profile created successfully:', data.message);
           sessionStorage.setItem('profilePicture', profilePicture);
           sessionStorage.setItem('bio', bio);
-          sessionStorage.setItem('selectedSkills', JSON.stringify(selectedSkills)); // Store as JSON string
+          sessionStorage.setItem('selectedSkills', selectedSkills); // Store as JSON string
           navigate('/my-profile', {
             state: {
               firstName,
