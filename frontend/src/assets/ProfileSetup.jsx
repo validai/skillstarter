@@ -71,7 +71,7 @@ const ProfileSetup = () => {
     };
     
     try {
-      const response = await fetch('https://skillstarter-7ztu.onrender.com/api/addUserProfile', {
+      const response = await fetch('https://skillstarter-7ztu.onrender.com:3000/api/addUserProfile', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
